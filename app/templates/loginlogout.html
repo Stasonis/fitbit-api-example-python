@@ -1,0 +1,7 @@
+<div>
+    {% if current_user.is_authenticated %}
+        <a href="{{ url_for('main.logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('main.login') }}">Login</a>
+    {% endif %}
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My Amazing Fitbit App</title>
+    </head>
+
+    <body>
+        {% include '_flashes.html' %}
+        {% include 'loginlogout.html' %}
+        <a href="{{ permission_url }}">Authorize Or Re-authorize Fitbit</a>
+        <div>
+            Hi {{ current_user.username }} I tried to access your fitbit user profile: {{ user_profile }}!
+        </div>
+    </body>
+</html>

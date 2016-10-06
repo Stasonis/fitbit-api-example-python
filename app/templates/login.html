@@ -1,0 +1,12 @@
+{% from "_formhelpers.html" import render_field %}
+
+{% include '_flashes.html' %}
+<a href="{{ url_for('main.register') }}">Register</a>
+<form method=post action="/login">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+  <dl>
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+  </dl>
+  <p><input type=submit value=Login>
+</form>

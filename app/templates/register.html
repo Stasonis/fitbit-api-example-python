@@ -1,0 +1,12 @@
+{% from "_formhelpers.html" import render_field %}
+{% include 'loginlogout.html' %}
+{% include '_flashes.html' %}
+<form method=post action="/register">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+  <dl>
+    {{ render_field(form.username) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.confirm) }}
+  </dl>
+  <p><input type=submit value=Register>
+</form>
