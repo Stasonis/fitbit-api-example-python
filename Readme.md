@@ -40,6 +40,13 @@ SECRET_KEY=sdasdas
 FLASK_CONFIG=development
 ```
 
+To define an environment variable in Unix environments you can use the export command
+```
+export SECRET_KEY=sdasdas
+```
+
+See [This superuser post for defining environment variables in windows](http://superuser.com/questions/949560/how-do-i-set-system-environment-variables-in-windows-10)
+
 After defining those you are ready to setup development.
 
 While the app uses sqlite for development its is designed to eventually be deployed to Heroku and requires Postgres to be installed. You should be able to install this with your package manager of choice. If you don't care about Heroku and dont intend to use Postgres for your production app you can remove the dependency `psycopg2` from `requirements.txt`
@@ -49,8 +56,11 @@ While the app uses sqlite for development its is designed to eventually be deplo
 pyvenv venv
 source venv/bin/activate
 pip install -r requirements.txt
+# Try the tests! They should pass!
+py.test tests
 ```
-Finally, you should decide on the OAuth scopes for your project. Specifically, define what data your app will
+
+Next, you should decide on the OAuth scopes for your project. Specifically, define what data your app will
 be accessing from people's Fitbit accounts. These are defined in fitbit.py. This example only uses the profile
 scope. Your app will almost certainly need more than that.
 
